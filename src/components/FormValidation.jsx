@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import { z } from "zod";
 
 const FormValidation = () => {
   const form = useForm({
@@ -12,6 +13,7 @@ const FormValidation = () => {
         twitter: "",
       },
     },
+    mode: "onTouched",
   });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
